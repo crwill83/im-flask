@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        {% for tool in tools %}
+            <!-- on click takes you to the tools detail page -->
+            <a href="{{ url_for('ig.toolDetails', tool_id=tool.id) }}" id="card" class="card" style="width: 18rem;">
+                <img src="{{ tool.item_image }}" class="card-img-top" alt="{{ tool.item_name }}">
+                <div class="card-body">
+                <h5 class="card-title">{{ tool.item_name }}</h5>
+                <p class="card-text">Model: {{ tool.item_model }}</p>
+                <button href="{{ url_for('ig.addToCart', tool_id=tool.id) }}" type="button" class="btn btn-success">Add to Cart</button>
+                </div>
+            </a>
+
+        {% endfor %}
+{% endblock content %}

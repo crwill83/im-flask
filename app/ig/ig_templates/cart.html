@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+<!-- Displaying tools til I can get something in my cart table -->
+{% block content %}
+        {% for cart in cart_item %}
+        <!-- <a href="{{ url_for('ig.cart', cart_id=cart.id) }}" id="card" class="card" style="width: 18rem;">
+                <img src="{{ tool.item_image }}" class="card-img-top" alt="{{ tool.item_name }}">
+                <div class="card-body">
+                <h5 class="card-title">{{ cart_item.item_name }}</h5>
+                <p class="card-text">Model: {{ cart_item.item_model }}</p>
+                </div>
+        </a> -->
+        {% endfor %}
+{% endblock content %}

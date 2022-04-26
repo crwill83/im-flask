@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset>
+            {{ form.item_image.label }}
+            {{ form.item_image(class='form-control', placeholder='Item Image') }}
+        </fieldset>
+        <fieldset>
+            {{ form.item_name.label }}
+            {{ form.item_name(class='form-control', placeholder='Item') }}
+        </fieldset>
+        <fieldset>
+            {{ form.item_model.label }}
+            {{ form.item_model(class='form-control', placeholder='Model') }}
+        </fieldset>
+        <fieldset>
+            {{ form.item_serial.label }}
+            {{ form.item_serial(class='form-control', placeholder='Serial Number') }}
+        </fieldset>
+        <fieldset>
+            {{ form.item_description.label }}
+            {{ form.item_description(class='form-control', placeholder='Description') }}
+        </fieldset>
+        {{ form.submit(class='btn btn-primary') }}
+    </div>
+</form>
+
+{% endblock content %}

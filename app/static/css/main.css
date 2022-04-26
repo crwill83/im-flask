@@ -1,0 +1,105 @@
+.btn {
+  margin-top: 5px;
+}
+
+#card img:hover {
+  transform: scale(1.15); 
+  z-index: 1; 
+}
+
+#card {
+  display:inline-flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 18rem;
+  transition: all .3s ease-in-out;
+  border-radius: 20px;
+  margin:10px;
+  box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+  padding:20px;
+}
+
+#card img {
+  border-radius: 20px;
+  transition: all .3s ease-in-out;
+}
+
+.sign-up-container {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "sign-in sign-in"
+      "email email"
+      "email-space email-space"
+      "password-text forgot-password"
+      "password-space password-space"
+      "sign-in-button sign-in-button"
+      "create-account create-account";
+      border:2px solid rgba(211, 211, 211, 0.589);
+      border-radius:6px;
+      width:330px;
+      height:400px;
+      padding:25px;
+      font-family:Arial,sans-serif;
+      align-items:center;
+      margin-left:auto;
+      margin-right:auto;
+      padding-bottom:30px;
+  }
+  
+  .sign-in { 
+      grid-area: sign-in; 
+      
+    }
+  .sign-in h1{
+      margin-bottom:-5px;
+      margin-top:1px;
+      font-weight:lighter;
+  }
+
+  .email {grid-area: email; margin-bottom:-2px;}
+
+
+ .input-space{
+     height:35px;
+     width:92%;
+     border-radius:5px;
+     border: 1px solid lightgrey;
+     padding-left:3%;
+ }
+
+  .email-space {grid-area: email-space; }
+  
+ 
+  .password-text { 
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+  .password-space { grid-area: password-space;;
+  }
+  .password-space input{
+      font-size:large;
+  }
+  
+  .sign-in-button { grid-area: sign-in-button; }
+
+  .sign-in-button input{
+      width:50%;
+      height:40px;
+      border-radius:5px;
+      border:2px solid rgba(107, 100, 85, 0.438);
+      background:linear-gradient(0deg,rgba(27, 255, 6, 0.849),rgb(221, 255, 201));
+      margin-top:20px;
+      font-size:large;
+  }
+  .sign-in-button input:hover{
+    background:linear-gradient(0deg,rgba(32, 255, 11, 0.849),rgb(57, 255, 73));
+  }
+  
+ 
