@@ -1,3 +1,7 @@
+body {
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/pw_maze_black.png');
+}
+
 .btn {
   margin-top: 5px;
 }
@@ -8,6 +12,10 @@
 }
 
 #card {
+  align-self: flex-start;
+  justify-content: stretch;
+  vertical-align: top;
+  color: #c7c7c7;
   display:inline-flex;
   flex-wrap: wrap;
   text-align: center;
@@ -20,6 +28,7 @@
              0 0  0 2px rgb(255,255,255),
              0.3em 0.3em 1em rgba(0,0,0,0.3);
   padding:20px;
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dark_fish_skin.png');
 }
 
 #card img {
@@ -27,79 +36,134 @@
   transition: all .3s ease-in-out;
 }
 
-.sign-up-container {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0 10px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "sign-in sign-in"
-      "email email"
-      "email-space email-space"
-      "password-text forgot-password"
-      "password-space password-space"
-      "sign-in-button sign-in-button"
-      "create-account create-account";
-      border:2px solid rgba(211, 211, 211, 0.589);
-      border-radius:6px;
-      width:330px;
-      height:400px;
-      padding:25px;
-      font-family:Arial,sans-serif;
-      align-items:center;
-      margin-left:auto;
-      margin-right:auto;
-      padding-bottom:30px;
+.sign-up-container {  
+  color: white;
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dark_fish_skin.png');
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "sign-in sign-in"
+    "email email"
+    "email-space email-space"
+    "password-text forgot-password"
+    "password-space password-space"
+    "sign-in-button sign-in-button"
+    "create-account create-account";
+    border:2px solid rgba(211, 211, 211, 0.589);
+    border-radius:6px;
+    width:50%;
+    height:400px;
+    padding:25px;
+    font-family:Arial,sans-serif;
+    align-items:center;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom:30px;
   }
   
-  .sign-in { 
-      grid-area: sign-in; 
-      
-    }
-  .sign-in h1{
-      margin-bottom:-5px;
-      margin-top:1px;
-      font-weight:lighter;
+.sign-in { 
+    grid-area: sign-in; 
+    margin-bottom: 20px;
+    font-weight: bold;
   }
+.sign-in h1{
+    margin-bottom:-5px;
+    margin-top:1px;
+    font-weight:lighter;
+}
 
-  .email {grid-area: email; margin-bottom:-2px;}
+.email {grid-area: email; margin-bottom:-2px;}
 
 
- .input-space{
-     height:35px;
-     width:92%;
-     border-radius:5px;
-     border: 1px solid lightgrey;
-     padding-left:3%;
- }
+.input-space{
+    height:35px;
+    width:92%;
+    border-radius:5px;
+    border: 1px solid lightgrey;
+    padding-left:3%;
+}
 
-  .email-space {grid-area: email-space; }
+.email-space {grid-area: email-space; }
+
+
+.password-text { 
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.password-space { grid-area: password-space;;
+}
+.password-space input{
+    font-size:large;
+}
+
+.sign-in-button { grid-area: sign-in-button; }
+
+.sign-in-button input{
+    width:150px;
+    height:40px;
+    border-radius:5px;
+    border:2px solid rgba(107, 100, 85, 0.438);
+    background:linear-gradient(0deg,rgba(27, 255, 6, 0.849),rgb(162, 253, 109));
+    margin-top:20px;
+    font-size:large;
+}
+.sign-in-button input:hover{
+  background:linear-gradient(0deg,rgba(32, 255, 11, 0.849),rgb(57, 255, 73));
+}
+
+table, th, td {
+  border: 1px solid rgb(18, 18, 18);
+}
+
+.search {
+  background-color: rgb(33, 37, 41);
+  color: white;
+}
+
+.form-group {
+  margin:20px auto;
+  color: white;
+  width: 50%;
+}
+
+#nav {
+  width:20%;
+  margin: 10px auto;
+  border-radius: 10px;
+  background: black;
+  color:rgb(57, 255, 73);
   
- 
-  .password-text { 
-    margin-top: 20px;
-    font-size: 25px;
-  }
+  text-decoration: none;
+}
 
-  .password-space { grid-area: password-space;;
-  }
-  .password-space input{
-      font-size:large;
-  }
-  
-  .sign-in-button { grid-area: sign-in-button; }
+a {
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
-  .sign-in-button input{
-      width:50%;
-      height:40px;
-      border-radius:5px;
-      border:2px solid rgba(107, 100, 85, 0.438);
-      background:linear-gradient(0deg,rgba(27, 255, 6, 0.849),rgb(221, 255, 201));
-      margin-top:20px;
-      font-size:large;
-  }
-  .sign-in-button input:hover{
-    background:linear-gradient(0deg,rgba(32, 255, 11, 0.849),rgb(57, 255, 73));
-  }
-  
- 
+.cardbtn {
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.glow {
+  animation: pulse 2s infinite;
+  box-shadow:0 0 5px #3cff0b;
+}
+
+#nav a {
+  color:rgb(114, 114, 114);
+  font-weight: bold;
+}
+
+#nav a:hover {
+  background: #2bd800;
+  opacity: 0.8;
+  border-radius: 5px;
+  color: white;
+}

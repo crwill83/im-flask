@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='row justify-content-around' div style='width: 80%; margin: auto;'>
+            <div style='margin: auto'>
+            
+                <a href="{{ url_for('ig.tools') }}">
+                    <button class="cardbtn"  style='width: 100px; margin: 10px 10px;'>Card</button>
+                </a>
+            </div>
+            <input type="text" class="search" id="myInput" onkeyup="tableFilterItem()" placeholder="Search Item Name..." />
+            <input type="text" class="search" id="myInput2" onkeyup="tableFilterModel()" placeholder="Search Model..." />
+            <input type="text" class="search" id="myInput3" onkeyup="tableFilterDesc()" placeholder="Search Description..." />
+            <input type="text" class="search" id="myInput4" onkeyup="tableFilterSerial()" placeholder="Search Serial Number..." />
+                     
+            
+            <table id='myTable' class='table table-dark table-striped' >
+                <tr>
+                    <th style= 'padding-left: 10px' >Link</th>
+                    <th style= 'padding-left: 10px' >Item Name</th>
+                    <th style= 'padding-left: 10px' >Model</th>
+                    <th style= 'padding-left: 10px' >Description</th>
+                    <th style= 'padding-left: 10px' >Serial</th>
+                </tr>
+        {% for tool in tools %}
+
+            <tr>
+                <td><a href="{{ url_for('ig.toolDetails', tool_id=tool.id) }}">
+                        <img src="{{tool.item_image}}" alt="{{tool.item_name}}" style='display: block; margin:auto; height: 40px; width: 40px; border-radius: 5px;' />
+                    </a></td>
+                <td style='padding-left:10px'>{{tool.item_name}}</td>
+                <td style='padding-left:10px'>{{tool.item_model}}</td>
+                <td style='padding-left:10px'>{{tool.item_description}}</td>
+                <td style='padding-left:10px'>{{tool.item_serial}}</td>
+            </tr>
+            
+                    {% endfor %}
+                    
+                </table>
+            </div>
+
+
+{% endblock content %}

@@ -4,6 +4,9 @@
 <form method="POST">
     {{ form.hidden_tag() }}
     <div class="form-group">
+        <div class="sign-in">
+            <h1>Sign In</h1>
+        </div>
         <fieldset>
             {{ form.username.label }}
             {{ form.username(class='form-control', placeholder='Username') }}
@@ -12,10 +15,10 @@
             {{ form.password.label }}
             {{ form.password(class='form-control', placeholder='Password') }}
         </fieldset>
-        <fieldset>
+        <!-- <fieldset>
             {{ form.remember_me.label(class='form-check-label') }}
             {{ form.remember_me(class='form-check-input') }}
-        </fieldset>
+        </fieldset> -->
         {{ form.submit(class='btn btn-primary') }}
 
     </div>

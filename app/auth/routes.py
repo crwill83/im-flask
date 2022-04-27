@@ -31,9 +31,6 @@ def logMeIn():
             # log them in
             login_user(user, remember = remember_me)
             return redirect(url_for('home'))
-
-
-
     return render_template('login.html', form = form)
 
 @auth.route('/signup', methods=["GET", "POST"])
@@ -63,3 +60,59 @@ def signMeUp():
 def logMeOut():
     logout_user()
     return redirect(url_for('auth.logMeIn'))
+
+
+#
+#
+# API Routes
+#
+#
+
+@auth.route('/signup', methods=["POST"])
+def apiSignMeUp():
+    data = request.json
+    print(data)
+    return {'sign':'up'}
+
+    # form = UserCreationForm()
+    # if current_user.is_authenticated:
+    #     return redirect(url_for('home'))
+    # if request.method == "POST":
+    #     if form.validate():
+    #         username = form.username.data
+    #         email = form.email.data
+    #         password = form.password.data
+
+    #         # create an instance of our user
+    #         user = User(username, email, password)
+
+    #         # add instance to database
+    #         db.session.add(user)
+    #         # commit to databse
+    #         db.session.commit()
+    #         return redirect(url_for('auth.logMeIn'))
+
+    # return render_template('signup.html', form=form)
+
+
+
+@auth.route('/api/login', methods=["POST"])
+def apiLogMeIn():
+    data = request.json
+    print(data)
+    return {'hello':'there'}
+    
+    #     if form.validate():
+    #         username = form.username.data
+    #         password = form.password.data
+    #         remember_me = form.remember_me.data
+
+    #         # check if user exists
+    #         user = User.query.filter_by(username=username).first()
+
+    #         if user is None or check_password_hash(user.password, password):
+    #             redirect(url_for('auth.logMeIn'))
+    #         # log them in
+    #         login_user(user, remember = remember_me)
+    #         return redirect(url_for('home'))
+    # return render_template('login.html', form = form)

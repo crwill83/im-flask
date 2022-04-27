@@ -10,11 +10,12 @@ from app.models import User, db, Inventory, Post, Rental, Cart
 # Adding a cart page
 @ig.route('/cart')
 def cart(inventory_id):
+    print('success')
 
     # cart = Cart.query.all()[::-1]
-    cart_items = db.session.query(cart.inventory_id, inventory.inventory_id).all()
+    # cart_items = db.session.query(cart.inventory_id, inventory.inventory_id).all()
 
-    return render_template('cart.html', cart_items=cart_items)
+    # return render_template('cart.html', cart_items=cart_items)
 
 # Add item to cart
 @ig.route('/add-cart/<int:tool_id>', methods=["GET", "POST"])
@@ -47,11 +48,17 @@ def posts():
     posts = Post.query.all()[::-1]
     return render_template('posts.html', posts = posts)
 
-#### added tools list page
+#### added tools list page with card display
 @ig.route('/tools')
 def tools():
     tools = Inventory.query.all()[::-1]
     return render_template('tools.html', tools = tools)
+
+#### added tools list page with table display
+@ig.route('/tools/list')
+def toolsList():
+    tools = Inventory.query.all()[::-1]
+    return render_template('tools_list.html', tools = tools)
 
 #### added add tool page
 @ig.route('/add-tool', methods=["GET", "POST"])
@@ -207,10 +214,25 @@ def deletePost(post_id):
 #
 
 @ig.route('/api/tools')
-def apiPosts():
+def apiTools():
     tools = Inventory.query.all()[::-1]
     return {
         'status': 'ok',
         'total_results': len(tools),
         'tools': [t.to_dict() for t in tools],
         }
+
+
+@ig.route('/api/tools/<int:tool_id>')
+def apiOneTool(tool_id):
+    tool = Inventory.query.filter_by(id=tool_id).first()
+    if tool is None:
+        return {
+            'status' : 'not ok',
+            'total_results': 0,
+        }
+    return {
+        'status' : 'ok',
+        'total_results': 1,
+        'tool': tool.to_dict()
+    }
