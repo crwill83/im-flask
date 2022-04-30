@@ -1,30 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="POST">
+<form class="add-tool-container" method="POST">
     {{ form.hidden_tag() }}
-    <div class="form-group">
+    <div class="">
         <h2>Add Tool</h2>
+        <br>
         <fieldset>
             {{ form.item_image.label }}
             {{ form.item_image(class='form-control', placeholder='Item Image') }}
         </fieldset>
+        <br>
         <fieldset>
             {{ form.item_name.label }}
             {{ form.item_name(class='form-control', placeholder='Item') }}
         </fieldset>
+        <br>
         <fieldset>
             {{ form.item_model.label }}
             {{ form.item_model(class='form-control', placeholder='Model') }}
         </fieldset>
+        <br>
         <fieldset>
             {{ form.item_serial.label }}
             {{ form.item_serial(class='form-control', placeholder='Serial Number') }}
         </fieldset>
+        <br>
         <fieldset>
             {{ form.item_description.label }}
             {{ form.item_description(class='form-control', placeholder='Description') }}
         </fieldset>
+        <br>
         {{ form.submit(class='btn btn-primary') }}
     </div>
 </form>

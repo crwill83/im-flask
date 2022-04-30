@@ -24,7 +24,7 @@
                     <th style= 'padding-left: 10px' >Serial</th>
                 </tr>
         {% for tool in tools %}
-
+            {% if tool.user_id == current_user.id %}
             <tr>
                 <td><a href="{{ url_for('ig.toolDetails', tool_id=tool.id) }}">
                         <img src="{{tool.item_image}}" alt="{{tool.item_name}}" style='display: block; margin:auto; height: 40px; width: 40px; border-radius: 5px;' />
@@ -34,8 +34,8 @@
                 <td style='padding-left:10px'>{{tool.item_description}}</td>
                 <td style='padding-left:10px'>{{tool.item_serial}}</td>
             </tr>
-            
-                    {% endfor %}
+            {% endif %}
+        {% endfor %}
                     
                 </table>
             </div>
